@@ -26,8 +26,30 @@ Route::get('/', function () {
         'NEWS',
         'SHOP'
     ];
+    $footerMenu = [
+        [
+           'img' => 'buy-comics-digital-comics.png',
+           'name' => 'DIGITAL COMICS' 
+        ],
+        [
+            'img' => 'buy-comics-merchandise.png',
+            'name' => 'DC MERCHANDISE' 
+         ],
+         [
+            'img' => 'buy-comics-subscriptions.png',
+            'name' => 'SUBSCRIPTION' 
+         ],
+         [
+            'img' => 'buy-comics-shop-locator.png',
+            'name' => 'COMIC SHOP LOCATOR' 
+         ],
+         [
+            'img' => 'buy-dc-power-visa.svg',
+            'name' => 'DC POWER VISA' 
+         ]
+    ];
     $comics = config('comics');
-    return view('home', compact('comics', 'menu'));
+    return view('home', compact('comics', 'menu', 'footerMenu'));
 });
 
 /* Route::get('/fumetti', function () {
