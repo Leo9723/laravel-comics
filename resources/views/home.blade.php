@@ -10,10 +10,15 @@
 </head>
 
 <body>
-    {{ $num }}
-    @include('header')
-    @include('fumetti')
-    @include('footer') 
+    <header>
+        @include('partials.header')
+    </header>
+    <main>
+        @include('partials.fumetti')
+    </main>
+    <footer>
+        @include('partials.footer')
+    </footer>
 </body>
 
 </html>

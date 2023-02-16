@@ -14,10 +14,24 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $num = 10;
-    return view('home', compact('num'));
+    $menu = [
+        'CHARACTERS',
+        'COMICS',
+        'MOVIES',
+        'TV',
+        'GAMES',
+        'COLLECTIBLES',
+        'VIDEOS',
+        'FANS',
+        'NEWS',
+        'SHOP'
+    ];
+    $comics = config('comics');
+    return view('home', compact('comics', 'menu'));
 });
-Route::get('/fumetti', function() {
+
+/* Route::get('/fumetti', function () {
     $comic = config('comics');
     return view('fumetti', compact('comic'));
-});
+}); */
+
