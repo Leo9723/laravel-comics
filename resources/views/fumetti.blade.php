@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    {{ print_r($comic) }}
+    {{ dd($comic) }}
 </body>
 
 </html>
