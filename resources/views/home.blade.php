@@ -13,7 +13,7 @@
     {{ $num }}
     @include('header')
     @include('fumetti')
-    @include('footer')
+    @include('footer') 
 </body>
 
 </html>
