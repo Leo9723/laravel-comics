@@ -14,7 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $comic = config('comics');
-    return view('home', $comic);
+    $num = 10;
+    return view('home', compact('num'));
 });
-
+Route::get('/fumetti', function() {
+    $comic = config('comics');
+    return view('fumetti', compact('comic'));
+});

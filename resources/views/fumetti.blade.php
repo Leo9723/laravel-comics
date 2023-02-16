@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    
+    {{ print_r($comic) }}
 </body>
 
 </html>

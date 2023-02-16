@@ -10,9 +10,8 @@
 </head>
 
 <body>
-    {{ var_dump($comic) }}
+    {{ $num }}
     @include('header')
-    @include('fumetti')
     @include('footer')
 </body>
 
