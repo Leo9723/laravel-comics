@@ -3,8 +3,8 @@
 @section('content')
 
 <div class="main-cont">
-   @foreach ($comics as $comic)
-   <a href="{{ route('detail-comic', ['param' => $comic['title']]) }}">
+   @foreach ($comics as $key => $comic)
+   <a href="{{ route('detail-comic', ['param' => $key]) }}">
       <div class="card">
          <div class="thumb">
             <img src="{{ $comic['thumb'] }}" alt="{{ $comic['title'] }}">
@@ -24,8 +24,19 @@
       margin: 0 auto;
       display: flex;
       flex-wrap: wrap;
+      padding: 100px 0px;
+      
    }
    a{
-      width: calc(100% / 6);
+      width: calc(100% / 7);
+      margin: 10px;
+   }
+   .card img{
+      width: 100%;
+
+   }
+   .main-cont a {
+      text-decoration: none;
+      color: black;
    }
 </style>

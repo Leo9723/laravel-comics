@@ -13,6 +13,9 @@
     <header>
         @include('partials.header')
     </header>
+    <jumbotron>
+        @include('partials.jumbotron')
+    </jumbotron>
     <main>
         @yield('content')
     </main>
@@ -22,3 +25,15 @@
 </body>
 
 </html>
+
+<style>
+    *{
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    main {
+        background-color: gray;
+    }
+</style>
