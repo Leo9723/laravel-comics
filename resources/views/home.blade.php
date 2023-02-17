@@ -1,24 +1,8 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+@extends('layouts.app')
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+@section('content')
 
-    <title>Laravel</title>
-
-</head>
-
-<body>
-    <header>
-        @include('partials.header')
-    </header>
-    <main>
-        @include('partials.fumetti')
-    </main>
-    <footer>
-        @include('partials.footer')
-    </footer>
-</body>
-
-</html>
+<div class="main-cont">
+    <h1>sezione home</h1>
+</div>
+@endsection('content')

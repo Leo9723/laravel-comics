@@ -3,7 +3,7 @@
                 @foreach ($footerMenu as $element)
                         <div class="element">
                                 <div class="element-img">
-                                        <img src="../../../public/img/{{ $element['img'] }}" alt="">
+                                        <img src="../img/{{ $element['img'] }}" alt="">
                                 </div>
                                 <div class="element-text">
                                         {{ $element['name'] }}
@@ -11,6 +11,32 @@
                         </div>
                 @endforeach
         </div>
+</div>
+<div class="list-cont">
+<ul class="footer-ul">
+        <li class="main-list-item">DC COMICS</li>
+            @foreach($list as $item)
+            <li>{{ $item }}</li>
+            @endforeach
+ </ul>
+ <ul class="footer-ul">
+        <li class="main-list-item">SHOP</li>
+            @foreach($list as $item)
+            <li>{{ $item }}</li>
+            @endforeach
+</ul>
+<ul class="footer-ul">
+        <li class="main-list-item">DC</li>
+            @foreach($list as $item)
+            <li>{{ $item }}</li>
+            @endforeach
+</ul>
+<ul class="footer-ul">
+        <li class="main-list-item">SITES</li>
+            @foreach($list as $item)
+            <li>{{ $item }}</li>
+            @endforeach
+</ul>
 </div>
 <div class="gray-footer">
         
@@ -30,6 +56,9 @@
         }
         .element{
                 padding: 20px;
+                display: flex;
+        }
+        .list-cont{
                 display: flex;
         }
 </style>

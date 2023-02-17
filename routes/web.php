@@ -26,6 +26,18 @@ Route::get('/', function () {
         'NEWS',
         'SHOP'
     ];
+    $list = [
+      'characters',
+      'comics',
+      'movies',
+      'tv',
+      'games',
+      'collectibles',
+      'videos',
+      'fans',
+      'news',
+      'shop'
+  ];
     $footerMenu = [
         [
            'img' => 'buy-comics-digital-comics.png',
@@ -48,12 +60,121 @@ Route::get('/', function () {
             'name' => 'DC POWER VISA' 
          ]
     ];
-    $comics = config('comics');
-    return view('home', compact('comics', 'menu', 'footerMenu'));
+    return view('home', compact('menu', 'footerMenu', 'list'));
 });
 
-/* Route::get('/fumetti', function () {
-    $comic = config('comics');
-    return view('fumetti', compact('comic'));
-}); */
+Route::get('/fumetti', function () {
+   $menu = [
+      'CHARACTERS',
+      'COMICS',
+      'MOVIES',
+      'TV',
+      'GAMES',
+      'COLLECTIBLES',
+      'VIDEOS',
+      'FANS',
+      'NEWS',
+      'SHOP'
+  ];
+  $list = [
+    'characters',
+    'comics',
+    'movies',
+    'tv',
+    'games',
+    'collectibles',
+    'videos',
+    'fans',
+    'news',
+    'shop'
+];
+  $footerMenu = [
+      [
+         'img' => 'buy-comics-digital-comics.png',
+         'name' => 'DIGITAL COMICS' 
+      ],
+      [
+          'img' => 'buy-comics-merchandise.png',
+          'name' => 'DC MERCHANDISE' 
+       ],
+       [
+          'img' => 'buy-comics-subscriptions.png',
+          'name' => 'SUBSCRIPTION' 
+       ],
+       [
+          'img' => 'buy-comics-shop-locator.png',
+          'name' => 'COMIC SHOP LOCATOR' 
+       ],
+       [
+          'img' => 'buy-dc-power-visa.svg',
+          'name' => 'DC POWER VISA' 
+       ]
+       ];
+    $comics = config('comics');
+    return view('fumetti', compact('comics', 'menu', 'footerMenu', 'list'));
+})->name('comics');
 
+
+route::get('/fumetti/{param}', function ($param){
+
+   $menu = [
+      'CHARACTERS',
+      'COMICS',
+      'MOVIES',
+      'TV',
+      'GAMES',
+      'COLLECTIBLES',
+      'VIDEOS',
+      'FANS',
+      'NEWS',
+      'SHOP'
+  ];
+  $list = [
+    'characters',
+    'comics',
+    'movies',
+    'tv',
+    'games',
+    'collectibles',
+    'videos',
+    'fans',
+    'news',
+    'shop'
+];
+  $footerMenu = [
+      [
+         'img' => 'buy-comics-digital-comics.png',
+         'name' => 'DIGITAL COMICS' 
+      ],
+      [
+          'img' => 'buy-comics-merchandise.png',
+          'name' => 'DC MERCHANDISE' 
+       ],
+       [
+          'img' => 'buy-comics-subscriptions.png',
+          'name' => 'SUBSCRIPTION' 
+       ],
+       [
+          'img' => 'buy-comics-shop-locator.png',
+          'name' => 'COMIC SHOP LOCATOR' 
+       ],
+       [
+          'img' => 'buy-dc-power-visa.svg',
+          'name' => 'DC POWER VISA' 
+       ]
+       ];
+
+    $comics = config('comics');
+
+/*       $comic = array_filter($comics, function($item) use($param){
+      return $item['title'] == $param;
+    }); */
+
+    foreach($comics as $comic){
+      if($comic['title'] == $param){
+         $single = $comic;
+      }
+    } 
+
+    return view('detail_comic', compact('single', 'menu', 'footerMenu', 'list'));
+})->name('detail-comic');
