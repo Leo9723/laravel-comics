@@ -2,41 +2,24 @@
 
 @section('content')
 
-<div class="main-cont">
-   @foreach ($comics as $key => $comic)
-   <a href="{{ route('detail-comic', ['param' => $key]) }}">
-      <div class="card">
-         <div class="thumb">
-            <img src="{{ $comic['thumb'] }}" alt="{{ $comic['title'] }}">
+<div class="maincont">
+@foreach ($comics as $key => $comic)
+<div class="cardContainer">
+   <div class="carta">
+            <a href="{{ route('detail-comic', ['param' => $key]) }}">
+            <div class="thumb">
+               <img src="{{ $comic['thumb'] }}" alt="{{ $comic['title'] }}">
+            </div>
+            <div class="title">
+               {{ $comic['title'] }}
+            </div>
+         </a>
          </div>
-         <div class="title">
-            {{ $comic['title'] }}
-         </div>
-      </div>
-   </a>
-   @endforeach
+
 </div>
+   @endforeach
+  </div>
+    <div class="button">
+      <button>LOAD MORE</button>
+    </div>
 @endsection('content')
-
-<style lang="scss">
-   .main-cont{
-      width: 80%;
-      margin: 0 auto;
-      display: flex;
-      flex-wrap: wrap;
-      padding: 100px 0px;
-      
-   }
-   a{
-      width: calc(100% / 7);
-      margin: 10px;
-   }
-   .card img{
-      width: 100%;
-
-   }
-   .main-cont a {
-      text-decoration: none;
-      color: black;
-   }
-</style>

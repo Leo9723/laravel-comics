@@ -33,37 +33,3 @@
 </div>
 
 @endsection
-
-<style>
-    .blue-row{
-        height: 50px;
-        background-color: blue;
-    }
-    .left-part {
-        height: 100px;
-    }
-    .cont{
-        display: flex;
-        width: 80%;
-        margin: 0 auto;
-        padding: 150px 0px;
-    }
-    .green-part{
-        display: flex;
-        background-color: green;
-    }
-    .sell{
-        display: flex;
-        width: 80%;
-        justify-content: space-around;
-    }
-    .img-cont{
-        position: relative;
-        height: 10px;
-    }
-    .thumb-img{
-        position: absolute;
-        bottom: 290%;
-        left: 10%;
-    }
-</style>

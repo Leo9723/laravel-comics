@@ -33,104 +33,115 @@
         'news',
         'shop'
     ];
+
+    $FooterList = [
+        [
+          'title' => 'DC COMICS',
+          'Item' => [
+            'Characters',
+            'Comics',
+            'Movies',
+            'TV',
+            'Games',
+            'Videos',
+            'News'
+          ]
+          ],
+        [
+          'title'=> 'SHOP',
+          'Item'=> [
+            'Shop DC',
+            'Shop DC Collectibles'
+          ]
+          ],
+        [
+          'title'=> 'DC',
+          'Item'=> [
+            'Terms Of Use',
+            'Privacy policy (New)',
+            'Ad Choices',
+            'Advertising',
+            'Jobs',
+            'Subscriptions',
+            'Talent Workshop',
+            'CPSC Certificates',
+            'Rating',
+            'Shop Help',
+            'Contact Us'
+          ]
+          ],
+        [
+          'title'=> 'SITES',
+          'Item'=> [
+            'DC',
+            'MAD Magazine',
+            'DC Kids',
+            'DC Universe',
+            'DC Power Visa'
+          ]
+        ]
+      ]
 ?>
-<div class="blue-footer">
-        <div class="ico-cont">
-                @foreach ($footerMenu as $element)
-                        <div class="element">
-                                <div class="element-img">
-                                        <img src="/img/{{ $element['img'] }}" alt="">
-                                </div>
-                                <div class="element-text">
-                                        {{ $element['name'] }}
-                                </div>
-                        </div>
-                @endforeach
-        </div>
-</div>
 
-<div class="gray-footer">
-        <div class="list-cont">
-                <ul class="footer-ul">
-                        <li class="main-list-item">DC COMICS</li>
-                        @foreach($list as $item)
-                        <li>{{ $item }}</li>
-                        @endforeach
-                </ul>
-                <ul class="footer-ul">
-                        <li class="main-list-item">SHOP</li>
-                        @foreach($list as $item)
-                        <li>{{ $item }}</li>
-                        @endforeach
-                </ul>
-                <ul class="footer-ul">
-                        <li class="main-list-item">DC</li>
-                        @foreach($list as $item)
-                        <li>{{ $item }}</li>
-                        @endforeach
-                </ul>
-                <ul class="footer-ul">
-                        <li class="main-list-item">SITES</li>
-                        @foreach($list as $item)
-                        <li>{{ $item }}</li>
-                        @endforeach
-                </ul>
-        </div>
-        <div class="logo-footer">
+<div>
+    <div class="info">
+      <ul>
+        @foreach ($footerMenu as $element)
+                                <li>
+                                  <div class="element">
+                                          <div class="element-img">
+                                                  <img src="/img/{{ $element['img'] }}" alt="">
+                                          </div>
+                                          <div class="element-text">
+                                                  {{ $element['name'] }}
+                                          </div>
+                                  </div>
+                                </li>
+         @endforeach
 
+      </ul>
+    </div>
+    <div class="links">
+      <div>
+        @foreach($FooterList as $FooterListItem)
+        <ul>
+        <span>{{ $FooterListItem['title'] }}</span>
+        @foreach($FooterListItem['Item'] as $ListItem)
+        <li>
+          {{ $ListItem }}
+        </li>
+        @endforeach
+      </ul>
+        @endforeach
+      </div>
+      <div class="logo">
+      </div>
+    </div>
+    <div class="media">
+      <div class="mediacontainer">
+      <div class="sign-up">
+        <button>SIGN-UP</button>
+      </div>
+      <div class="socials">
+        <div>
+          FOLLOW US
         </div>
-        
-</div>
-<style lang="scss" scoped>
-        .blue-footer {
-                background-color: blue;
-                color: white;
-                height: 200px;
-        }
-        .blue-footer img {
-                height: 50px;
-                width: 50px;
-                margin-right: 20px;
-        }
-        .ico-cont{
-                width: 80%;
-                margin: 0 auto;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                height: 100px;
-                height: 100%;
-        }
-        .element{
-                padding: 20px;
-                display: flex;
-                align-items: center;
-        }
-        .list-cont{
-                display: flex;
-                width: 50%;
-        }
-        .gray-footer{
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                height: 400px;
-                background-image: url(/img/footer-bg.jpg);
-        }
-        .logo-footer {
-                background-image: url(/img/dc-logo-bg.png);
-                height: 100%;
-                width: 30%;
-        }
-        footer li {
-                margin: 10px;
-        }
-        footer ul {
-                list-style-type: none;
-                margin-left: 40px;
-                color: white;
-        }
-        .main-list-item{
-                font-weight: bold;
-        }
-</style>
+        <div>
+          <img src="/img/footer-facebook.png" alt="">
+        </div>
+        <div>
+          <img src="/img/footer-twitter.png" alt="">
+        </div>
+        <div>
+          <img src="/img/footer-youtube.png" alt="">
+        </div>
+        <div>
+          <img src="/img/footer-pinterest.png" alt="">
+        </div>
+        <div>
+          <img src="/img/footer-periscope.png" alt="">
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>

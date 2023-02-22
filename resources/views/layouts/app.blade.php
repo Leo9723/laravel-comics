@@ -7,6 +7,8 @@
 
     <title>Laravel</title>
 
+    @vite('resources/js/app.js')
+
 </head>
 
 <body>
@@ -25,15 +27,3 @@
 </body>
 
 </html>
-
-<style>
-    *{
-        box-sizing: border-box;
-        padding: 0;
-        margin: 0;
-        font-family: Arial, Helvetica, sans-serif;
-    }
-    main {
-        background-color: gray;
-    }
-</style>

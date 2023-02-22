@@ -1,11 +1,5 @@
-<div class="jumbo-cont">
-
-</div>
-
-<style>
-    .jumbo-cont{
-        height: 350px;
-        background-image: url(/img/jumbotron.jpg);
-        background-size: cover;
-    }
-</style>
+<div class="jumbotron">
+  </div>
+  <div class="first-button">
+    <button>CURRENT SERIES</button>
+  </div>
