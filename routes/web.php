@@ -1,6 +1,17 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PageController as PageController;
+use App\Http\Controllers\ComicController as ComicController;
+
+
+
+
+/* Route::get('/', [PageController::class, 'index'])->name('homepage');
+
+Route::get('/fumetti', [ComicController::class, 'index'])->name('comics');
+
+Route::get('/fumetti/{id}', [ComicController::class, 'show'])->name('detail-fumetti'); */
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +28,9 @@ Route::get('/', function () {
 
     return view('home');
 });
+//Route::get('/', 'PageController@index')->name('homepage');
+
+//oppure
 
 Route::get('/fumetti', function () {
 
